@@ -3,14 +3,15 @@ import { Clock } from "./clock.js";
 
 //create your first component
 export function Home() {
-	let segundos = 0;
+	let [segundos, setSegundos] = useState(0);
+	// console.log(segundos);
 	setInterval(() => {
-		segundos = segundos + 1;
+		setSegundos(segundos + 1);
 		console.log(segundos);
 	}, 1000);
 	return (
 		<div>
-			<Clock segundos={segundos} />
+			<Clock segundos={...segundos} />
 		</div>
 	);
 }

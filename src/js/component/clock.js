@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export const Clock = ({ segundos }) => {
+	// console.log(segundos);
 	const allNumbers = [
 		segundos,
 		segundos / 1000,
