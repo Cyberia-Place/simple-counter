@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 //create your first component
-export const Clock = () => {
-	const [seconds, setSeconds] = useState(0);
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setSeconds(seconds => seconds + 1);
-		}, 1000);
-	}, []);
-
+export const SecondsCounter = ({ seconds }) => {
 	const allNumbers = [
 		Math.floor(seconds / 100000),
 		Math.floor(seconds / 10000),
@@ -45,12 +37,6 @@ export const Clock = () => {
 	);
 };
 
-// {
-// 	const [seconds, setseconds] = useState(0);
-// 	useEffect(() => {
-// 		setInterval(() => {
-// 			setseconds(seconds + 1);
-// 		}, 1000);
-// 	});
-
-// };
+SecondsCounter.propTypes = {
+	seconds: PropTypes.number
+};
