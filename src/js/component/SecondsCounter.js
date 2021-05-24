@@ -1,26 +1,24 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
-let allNumbers = Array(6).fill("");
-
+let allNumbers = Array(6).fill(0);
+let allResults = Array(6).fill(0);
 //create your first component
 export const SecondsCounter = ({ seconds }) => {
 	allNumbers = [
-		Math.floor(seconds / 100000),
-		Math.floor(seconds / 10000),
-		Math.floor(seconds / 1000),
-		Math.floor(seconds / 100),
-		Math.floor(seconds / 10),
-		Math.floor(seconds / 1)
+		Math.floor(seconds / 100000).toString(),
+		Math.floor(seconds / 10000).toString(),
+		Math.floor(seconds / 1000).toString(),
+		Math.floor(seconds / 100).toString(),
+		Math.floor(seconds / 10).toString(),
+		Math.floor(seconds / 1).toString()
 	];
 
 	for (let i = 0; i < 6; i++) {
-		if (allNumbers[i] > 9) {
-			allNumbers[i] = allNumbers[i] * 10;
-		}
+		allResults[i] = allNumbers[i][allNumbers[i].length - 1];
 	}
 
-	const horario = allNumbers.map((number, index) => {
+	const horario = allResults.map((number, index) => {
 		return (
 			<div className="mediumdiv mx-3" key={index}>
 				<div className="card">
